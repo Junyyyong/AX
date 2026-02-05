@@ -1,0 +1,145 @@
+:root {
+  --bg-color: #000000;
+  --text-color: #FFFFFF;
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  /* Base for absolute positioning */
+}
+
+/* Fullscreen Iframe (Underlay) */
+.main-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #000;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  pointer-events: auto;
+  /* Ensure iframe is interactable */
+}
+
+/* Overlay Sidebar */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  padding: 40px;
+  z-index: 10;
+  background: transparent;
+  pointer-events: none;
+  /* Let clicks pass through empty areas */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Center items vertically */
+
+  /* CRITICAL: Ensures visibility on white backgrounds */
+  mix-blend-mode: difference;
+}
+
+/* AX Logo / Header Container */
+.ax-logo {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  list-style: none;
+  /* Treat as list container */
+  padding: 0;
+  margin: 0;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+/* Specific styling for the AX items to match general list items */
+.ax-item {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+/* Hover & Active State for AX */
+.ax-logo li:hover,
+.ax-logo li.active,
+.ax-item:hover,
+.ax-item.active {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 0.9;
+  opacity: 1;
+}
+
+.item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 100px;
+  /* Space for the top logo */
+  pointer-events: auto;
+  /* Re-enable clicks on list */
+}
+
+.item-list li {
+  padding: 8px 0;
+  cursor: pointer;
+  /* Small by default */
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  /* Check mix-blend-mode for contrast */
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Smooth spring-like ease */
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+/* Hover & Active State: Become Large */
+.item-list li:hover,
+.item-list li.active {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 0.9;
+  opacity: 1;
+  padding: 12px 0;
+  /* Add slight breathing room when large */
+}
+
+/* Scrollbar hiding */
+.sidebar::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}

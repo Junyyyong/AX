@@ -1,0 +1,11 @@
+{
+    "name": "ax-interaction-archive",
+    "version": "1.0.0",
+    "description": "Interaction Archive",
+    "scripts": {
+        "build": "node tools/build_all.js && node tools/generate_list.js"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

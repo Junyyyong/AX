@@ -1,0 +1,17 @@
+[
+  {
+    "id": "gradient-flow",
+    "title": "Gradient Flow",
+    "path": "interactions/gradient-flow/index.html"
+  },
+  {
+    "id": "neon-pulse",
+    "title": "Neon Pulse",
+    "path": "interactions/neon-pulse/index.html"
+  },
+  {
+    "id": "rotating-cube",
+    "title": "Rotating Cube",
+    "path": "interactions/rotating-cube/index.html"
+  }
+]
